@@ -1,0 +1,23 @@
+[[source]]
+name = "hadoop_yarn_checker_cluster_pkg"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+pytest = "*"
+
+[packages]
+pytest = "*"
+xmljson = "*"
+events = "*"
+requests = "*"
+request = "*"
+requests_mock ="*"
+win10toast = "*"
+twine = "*"
+
+[requires]
+python_version = "3.6"
+
+[scripts]
+checker = "python GUI_Checker.py"
