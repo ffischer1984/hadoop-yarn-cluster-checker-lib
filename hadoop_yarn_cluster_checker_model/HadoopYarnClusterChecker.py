@@ -21,6 +21,7 @@ class HadoopYarnClusterChecker(Events):
 
     def __init__(self, server="http://sandbox-hdp.hortonworks.com:8088", path="/ws/v1/cluster/apps", intervall=1,
                  log=True, excludes="[{\"name\":\"Zeppelin\"},{\"name\":\"Zeppelin1\"}]"):
+        super().__init__()
         self.server = server
         self.path = path
         self.intervall_time = intervall

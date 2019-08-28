@@ -3,14 +3,15 @@ import argparse
 import os
 import requests
 
-from hadoop_yarn_cluster_checker import HadoopYarnClusterChecker
-from hadoop_yarn_cluster_checker import MockRequest
+from HadoopYarnClusterChecker import HadoopYarnClusterChecker
+from MockRequest import MockRequest
 
 
-class TestHadoopYarnClusterChecker():
-    __file_path_running_apps = os.getcwd() + "\\res\\running_app.json"
+class TestHadoopYarnClusterChecker:
+    __file_path_running_apps = os.path.dirname(__file__)+ "/res/running_app.json"
 
     def test_str2bool_true(self):
+
         assert HadoopYarnClusterChecker.str2bool("T") == True
         assert HadoopYarnClusterChecker.str2bool("t") == True
         assert HadoopYarnClusterChecker.str2bool("True") == True
@@ -29,10 +30,11 @@ class TestHadoopYarnClusterChecker():
             assert checker.areJobsRunning(xmlText) == True
 
     def test_running_jobs_are_excluded(self):
+        print(str(os.getcwd()))
         checker = HadoopYarnClusterChecker(
             excludes="[{\"name\":\"Zeppelin\"}]")  # only running application is name="Zeppelin1"
-        print(str(os.getcwd()))
-        with open(os.getcwd() + "\\res\\running_app.json", "r") as successResponseBodyFile:
+
+        with open(self.__file_path_running_apps, "r") as successResponseBodyFile:
             xmlText = successResponseBodyFile.read()
             assert checker.areJobsRunning(xmlText) == False
 

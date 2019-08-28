@@ -1,3 +1,5 @@
 .idea
 dist
 hadoop_yarn_cluster_checker_lib.egg-info
+.cache
+*.iml

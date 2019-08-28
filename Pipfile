@@ -18,6 +18,3 @@ twine = "*"
 
 [requires]
 python_version = "3.6"
-
-[scripts]
-checker = "python GUI_Checker.py"

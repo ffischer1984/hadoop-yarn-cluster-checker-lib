@@ -1,17 +1,19 @@
 import setuptools
+import os
+environment_variable_value = os.environ.get("BITBUCKET_BUILD_NUMBER", None )
 
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
     name="hadoop-yarn-cluster-checker-lib",
-    version="0.0.1",
+    version=environment_variable_value,
     author="fafi84",
     author_email="ffischer1984@googlemail.com",
     description="A small example package",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/pypa/sampleproject",
+    url="https://bitbucket.org/ffischer/hadoop-yarn-cluster-checker-model",
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",

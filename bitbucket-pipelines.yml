@@ -1,0 +1,37 @@
+# This is a sample build configuration for Python.
+# Check our guides at https://confluence.atlassian.com/x/x4UWN for more examples.
+# Only use spaces to indent your .yml configuration.
+# -----
+# You can specify a custom docker image from Docker Hub as your build environment.
+image: python:3.7.3
+
+pipelines:
+  default:
+    - step:
+        name: testing
+        caches:
+          - pip
+        script: # Modify the commands below to build your repository.
+          - pip install -r requirements.txt
+          - cd hadoop_yarn_cluster_checker_model
+          - ls -la
+          - python test.py
+          - python -m pytest test --junitxml=./test-reports/coverage.xml
+    - step:
+        name: building
+        script:
+          - pip freeze > requirements.txt
+          - python setup.py sdist bdist_wheel
+    - step:
+       name: Deploy to test
+       deployment: test
+    # trigger: manual  # Uncomment to make this a manual deployment.
+       script:
+       - echo "Deploying to pypi"
+       - pipe: atlassian/pypi-publish:0.2.8
+         variables:
+             PYPI_USERNAME: $PYPI_USERNAME
+             PYPI_PASSWORD: $PYPI_PASSWORD
+             REPOSITORY: 'https://pypi.org/legacy/'
+
+
