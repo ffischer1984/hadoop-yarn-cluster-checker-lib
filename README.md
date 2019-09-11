@@ -48,7 +48,10 @@ checker = HadoopYarnClusterChecker(server=args.server, path=args.path, intervall
                                                                excludes=args.excludes)
 checker.on_empty_cluster += event_empty
 ```
+#Donations
+[![paypal](https://www.paypalobjects.com/en_US/DK/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=EN22Z95HKGD74&source=url) 
 
 #Cheatsheet for me
+lore ipsem
 ##Twine
 only works with: twine upload --repository-url https://test.pypi.org/legacy/ dist/*
