@@ -10,7 +10,7 @@ setuptools.setup(
     version=environment_variable_value,
     author="fafi84",
     author_email="ffischer1984@googlemail.com",
-    description="A small example package",
+    description="fires an event if your hadoop-yarn cluster gets empty",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://bitbucket.org/ffischer/hadoop-yarn-cluster-checker-model",
