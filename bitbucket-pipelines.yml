@@ -23,8 +23,8 @@ pipelines:
           - pip freeze > requirements.txt
           - python setup.py sdist bdist_wheel
     - step:
-       name: Deploy to test
-       deployment: test
+       name: Deploy to pypi-release
+       deployment: release pypi
     # trigger: manual  # Uncomment to make this a manual deployment.
        script:
        - echo "Deploying to pypi"
@@ -32,6 +32,6 @@ pipelines:
          variables:
              PYPI_USERNAME: $PYPI_USERNAME
              PYPI_PASSWORD: $PYPI_PASSWORD
-             REPOSITORY: 'https://pypi.org/legacy/'
+             REPOSITORY: 'https://upload.pypi.org/legacy/'
 
 
