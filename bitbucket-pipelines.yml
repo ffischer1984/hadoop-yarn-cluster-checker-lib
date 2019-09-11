@@ -23,8 +23,8 @@ pipelines:
           - pip freeze > requirements.txt
           - python setup.py sdist bdist_wheel
     - step:
-       name: Deploy to pypi release
-       deployment: release pypi
+       name: Deploy to Production
+       deployment: Production
     # trigger: manual  # Uncomment to make this a manual deployment.
        script:
        - echo "Deploying to pypi"
