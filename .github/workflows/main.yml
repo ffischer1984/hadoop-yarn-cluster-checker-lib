@@ -1,0 +1,27 @@
+name: first shot
+
+on: push
+
+jobs:
+  my-job:
+  name: My Job
+    runs-on: python:3.7.3
+    steps:
+      - name: test
+      - uses: actions/checkout@release
+        # This step checks out a copy of your repository.
+        #- uses: actions/checkout@v1
+        # This step references the directory that contains the action.
+        #- uses: ./.github/actions/tests
+        - run: |
+            pip install -r requirements.txt
+            cd hadoop_yarn_cluster_checker_model
+            python test.py
+            python -m pytest test --junitxml=./test-reports/coverage.xml
+      - name: build
+        - run: |
+            pip freeze > requirements.txt
+            python setup.py sdist bdist_wheel
+
+
+

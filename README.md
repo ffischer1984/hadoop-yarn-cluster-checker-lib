@@ -1,4 +1,4 @@
-
+https://github.com/<OWNER>/<REPOSITORY>/workflows/tests/badge.svg
 Sends event if the yarn-cluster is empty/free to trigger other stuff (e.g. send you an email or start another application)
 
 The HadoopYarnClusterChecker-Class checks your cluster if there is any application run on it. In case your cluster is free it fires an event.
