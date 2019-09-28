@@ -4,14 +4,14 @@ on: push
 
 jobs:
   my-job:
-  name: My Job runs on python ${{ matrix.node_version }} and ${{ matrix.os }}
+  name: My Job runs on python ${{ matrix.python_version }} and ${{ matrix.os }}
   runs-on: ${{ matrix.os }}
   strategy:
       matrix:
-      python-version: [3.5, 3.6, 3.7]
-      os: ubuntu-latest
+      python_version: [3.5, 3.6, 3.7]
+      os: [ubuntu-latest]
     steps:
-      - name: test
+      - name: test with python ${{ matrix.python_version }}
       - uses: actions/checkout@release
         # This step checks out a copy of your repository.
         #- uses: actions/checkout@v1
