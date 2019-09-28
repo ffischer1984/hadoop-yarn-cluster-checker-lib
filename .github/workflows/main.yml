@@ -24,11 +24,10 @@ jobs:
           python3 --version
           pip --version
           pip3 --version
-          echo "pip install -U pip"
-          pip install -U pip          
-          echo "pip3 install -U pip3"
-          pip3 install -U pip3
-          pip3 install -r requirements.txt
+          echo "upgrade pip"
+          pip install -U pip 
+          echo "install req"
+          pip install -r requirements.txt
           cd hadoop_yarn_cluster_checker_model
           python3 test.py
           python3 -m pytest test --junitxml=./test-reports/coverage.xml
