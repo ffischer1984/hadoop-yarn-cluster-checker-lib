@@ -25,7 +25,9 @@ jobs:
           pip --version
           pip3 --version
           echo "upgrade pip"
-          pip install -U pip 
+          sudo apt-get install python3-pip
+          pip --version
+          pip3 --version
           echo "install req"
           pip install -r requirements.txt
           cd hadoop_yarn_cluster_checker_model
