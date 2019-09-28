@@ -11,7 +11,9 @@ jobs:
           python_version: [3.5, 3.6, 3.7]
           os: [ubuntu-latest]
     steps:
-      - uses: actions/checkout@release
+      - uses: actions/checkout@master
+        with:
+          ref: release
       - name: test with python ${{ matrix.python_version }}
         # This step checks out a copy of your repository.
         #- uses: actions/checkout@v1
