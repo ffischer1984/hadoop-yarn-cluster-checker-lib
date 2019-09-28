@@ -11,7 +11,6 @@ jobs:
           python_version: [3.7]
           os: [ubuntu-latest]
     steps:
-      - uses: cclauss/Upgrade-to-Python3@0.1.0
       - uses: actions/checkout@master
         with:
           ref: release
