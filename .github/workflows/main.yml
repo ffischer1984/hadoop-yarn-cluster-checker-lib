@@ -11,11 +11,10 @@ jobs:
           python_version: [3.7]
           os: [ubuntu-latest]
     steps:
+      - uses: cclauss/Upgrade-to-Python3@0.1.0
       - uses: actions/checkout@master
         with:
           ref: release
-      - name: Upgrade to Python 3
-        uses: cclauss/Upgrade-to-Python3@0.1.0
       - name: test with python ${{ matrix.python_version }}
         # This step checks out a copy of your repository.
         #- uses: actions/checkout@v1
