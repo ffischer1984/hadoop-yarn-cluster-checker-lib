@@ -9,10 +9,10 @@ jobs:
     strategy:
         matrix:
           python_version: [3.5, 3.6, 3.7]
-          os: ubuntu-latest
+          os: [ubuntu-latest]
     steps:
-      - name: test with python ${{ matrix.python_version }}
       - uses: actions/checkout@release
+      - name: test with python ${{ matrix.python_version }}
         # This step checks out a copy of your repository.
         #- uses: actions/checkout@v1
         # This step references the directory that contains the action.
