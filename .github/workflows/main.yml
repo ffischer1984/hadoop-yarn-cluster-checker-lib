@@ -8,8 +8,8 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
         matrix:
-        python_version: [3.5, 3.6, 3.7]
-        os: ubuntu-latest
+          python_version: [3.5, 3.6, 3.7]
+          os: ubuntu-latest
     steps:
       - name: test with python ${{ matrix.python_version }}
       - uses: actions/checkout@release
