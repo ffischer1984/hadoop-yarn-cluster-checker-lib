@@ -6,7 +6,7 @@ jobs:
   my-job:
   name: My Job runs on python ${{ matrix.node_version }} and ${{ matrix.os }}
   runs-on: ${{ matrix.os }}
-    strategy:
+  strategy:
       matrix:
       python-version: [3.5, 3.6, 3.7]
       os: ubuntu-latest
