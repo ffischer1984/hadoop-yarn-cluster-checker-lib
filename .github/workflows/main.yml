@@ -22,13 +22,15 @@ jobs:
         run: |
           ls -la
           python3 --version
-          python3 pip install -r requirements.txt
+          pip --version
+          pip3 --version
+          pip3 install -r requirements.txt
           cd hadoop_yarn_cluster_checker_model
           python3 test.py
           python3 -m pytest test --junitxml=./test-reports/coverage.xml
       - name: build
         run: |
-            python3 pip freeze > requirements.txt
+            pip3 freeze > requirements.txt
             python3 setup.py sdist bdist_wheel
 
 
