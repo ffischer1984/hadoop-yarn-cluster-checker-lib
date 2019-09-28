@@ -22,7 +22,7 @@ jobs:
         run: |
           ls -la
           python3 --version
-          pip3 install --upgrade setuptools pip
+          sudo -H pip3 install --upgrade pip
           pip --version
           pip3 --version
           pip3 install -r requirements.txt
