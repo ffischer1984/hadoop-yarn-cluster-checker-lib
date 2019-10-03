@@ -1,4 +1,12 @@
-https://github.com/<OWNER>/<REPOSITORY>/workflows/tests/badge.svg
+#Readme
+## Caution
+this is my playground repo for git-actions. 
+If you're really interested in the code use this links:
+* [bitbucket](https://bitbucket.org/ffischer/hadoop-yarn-cluster-checker-model/src/master/)
+* [pypi](https://pypi.org/project/hadoop-yarn-cluster-checker-lib/)
+
+[badge](https://github.com/ffischer1984/hadoop-yarn-cluster-checker-lib/workflows/tests/badge.svg?raw=true)
+
 Sends event if the yarn-cluster is empty/free to trigger other stuff (e.g. send you an email or start another application)
 
 The HadoopYarnClusterChecker-Class checks your cluster if there is any application run on it. In case your cluster is free it fires an event.
